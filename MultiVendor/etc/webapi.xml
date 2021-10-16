@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+	<route url="/V1/custom-multivendor/custom_multivendor" method="POST">
+		<service class="Custom\MultiVendor\Api\CustomMultivendorRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="Custom_MultiVendor::custom_multivendor_save"/>
+		</resources>
+	</route>
+	<route url="/V1/custom-multivendor/custom_multivendor/search" method="GET">
+		<service class="Custom\MultiVendor\Api\CustomMultivendorRepositoryInterface" method="getList"/>
+		<resources>
+			<resource ref="Custom_MultiVendor::custom_multivendor_view"/>
+		</resources>
+	</route>
+	<route url="/V1/custom-multivendor/custom_multivendor/:customMultivendorId" method="GET">
+		<service class="Custom\MultiVendor\Api\CustomMultivendorRepositoryInterface" method="get"/>
+		<resources>
+			<resource ref="Custom_MultiVendor::custom_multivendor_view"/>
+		</resources>
+	</route>
+	<route url="/V1/custom-multivendor/custom_multivendor/:customMultivendorId" method="PUT">
+		<service class="Custom\MultiVendor\Api\CustomMultivendorRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="Custom_MultiVendor::custom_multivendor_update"/>
+		</resources>
+	</route>
+	<route url="/V1/custom-multivendor/custom_multivendor/:customMultivendorId" method="DELETE">
+		<service class="Custom\MultiVendor\Api\CustomMultivendorRepositoryInterface" method="deleteById"/>
+		<resources>
+			<resource ref="Custom_MultiVendor::custom_multivendor_delete"/>
+		</resources>
+	</route>
+</routes>

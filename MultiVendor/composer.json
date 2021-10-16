@@ -1,0 +1,22 @@
+{
+    "name": "custom/module-multivendor",
+    "description": "Custom Multivendor",
+    "type": "magento2-module",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Abdul Rafay",
+            "email": "abdulrafaywaqar@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Custom\\MultiVendor\\": ""
+        }
+    }
+}

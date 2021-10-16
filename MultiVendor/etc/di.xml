@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Custom\MultiVendor\Api\CustomMultivendorRepositoryInterface" type="Custom\MultiVendor\Model\CustomMultivendorRepository"/>
+	<preference for="Custom\MultiVendor\Api\Data\CustomMultivendorInterface" type="Custom\MultiVendor\Model\Data\CustomMultivendor"/>
+	<preference for="Custom\MultiVendor\Api\Data\CustomMultivendorSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Custom\MultiVendor\Model\ResourceModel\CustomMultivendor\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">custom_multivendor_custom_multivendor</argument>
+			<argument name="resourceModel" xsi:type="string">Custom\MultiVendor\Model\ResourceModel\CustomMultivendor\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="custom_multivendor_custom_multivendor_listing_data_source" xsi:type="string">Custom\MultiVendor\Model\ResourceModel\CustomMultivendor\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>
